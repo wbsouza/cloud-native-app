@@ -1,0 +1,36 @@
+{
+    "git.ignoreLimitWarning": true,
+    "python.disableInstallationCheck": true,
+    "python.venvFolders": [
+        "${workspaceRoot}/voteapp-api-python/.venv"
+    ],
+    "python.pythonPath": "${workspaceRoot}/voteapp-api-python/.venv/bin/python3",
+    "python.linting.pylintEnabled": false,
+
+    // use this so the autocompleate/goto definition will work with python extension
+    "python.autoComplete.extraPaths": [
+        "${workspaceRoot}/python-extra-source-dir"
+    ],
+
+    //load the pylint_odoo
+    "python.linting.pylintArgs": [
+        "--load-plugins", "pylint"
+    ],
+
+    "python.formatting.provider": "black",
+
+    //"python.formatting.yapfPath": "optional: path to python use if you have environment path",
+    // "python.linting.pycodestylePath": "optional: path to python use if you have environment path",
+    "python.linting.pycodestyleEnabled": true,
+
+    // add this auto-save option so the pylint will sow errors while editing otherwise
+    //it will only show the errors on file save
+    "files.autoSave": "afterDelay",
+    "files.autoSaveDelay": 500,
+
+    // The following will hide the compiled file in the editor/ add other file to hide them from editor
+    "files.exclude": {
+        "**/*.pyc": true
+    }
+
+}
