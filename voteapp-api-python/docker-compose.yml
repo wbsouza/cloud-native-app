@@ -1,0 +1,23 @@
+version: '3'
+services:
+  mongo:
+    #image: mongo
+    image: mongo:3.6.8
+    environment:
+      - MONGO_INITDB_DATABASE=langdb
+      - MONGO_INITDB_ROOT_USERNAME=admin
+      - MONGO_INITDB_ROOT_PASSWORD=password
+    volumes:
+      - ./init-mongo.js:/docker-entrypoint-initdb.d/init-mongo.js:ro
+      - ./mongo-data:/data/db  
+    ports:
+      - "27017-27019:27017-27019"
+  api-server:
+    image: voteapp-api-python:latest 
+    env_file: .env
+    ports:
+      - "5000:5000"
+    depends_on:
+      - mongo
+    links:
+      - mongo

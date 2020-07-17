@@ -1,0 +1,32 @@
+*.pyc
+*~
+__pycache__/
+
+# IntelliJ
+/out/
+
+# mpeltonen/sbt-idea plugin
+.idea_modules/
+crashlytics.properties
+crashlytics-build.properties
+
+### Eclipse template
+*.pydevproject
+.metadata
+.gradle
+*.tmp
+*.bak
+*.swp
+*~.nib
+.settings/
+.bash_history
+.bash_profile
+.bashrc
+.profile
+.history
+
+.venv/
+logs/
+/data/
+__pycache__/
+

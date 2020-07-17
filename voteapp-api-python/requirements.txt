@@ -1,0 +1,9 @@
+# Testing
+coverage==3.7.1
+mocker==1.1.1
+
+# Development
+flask==1.1.2
+pymongo==3.3
+flask-pymongo==2.3.0
+flask-restplus==0.9.2
