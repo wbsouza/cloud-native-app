@@ -24,9 +24,11 @@ crashlytics-build.properties
 .bashrc
 .profile
 .history
+.idea
 
 .venv/
 logs/
 /data/
+node_modules/
 __pycache__/
 
