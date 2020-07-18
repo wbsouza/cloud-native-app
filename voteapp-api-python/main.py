@@ -60,6 +60,19 @@ def get_language(language):
     return jsonify(result)
 
 
+@app.route('/languages/<name>', methods=['POST'])
+def create_language(name):
+    if mongo.db.languages.find({'name': name}).count() > 0:
+        return "Language already exists", 409
+    else:
+        language = {
+            'name': name,
+            'codedetail': request.get_json()
+        }
+        mongo.db.languages.insert(language)
+        return "Added language successfully"
+
+
 if __name__ == "__main__":
     app.debug = True
     app.run(host='0.0.0.0')
