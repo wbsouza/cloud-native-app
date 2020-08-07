@@ -1,4 +1,4 @@
-version: '3'
+version: "3"
 services:
   mongo:
     #image: mongo
@@ -9,14 +9,14 @@ services:
       - MONGO_INITDB_ROOT_PASSWORD=password
     volumes:
       - ./init-mongo.js:/docker-entrypoint-initdb.d/init-mongo.js:ro
-      - ./mongo-data:/data/db  
+      - ./mongo-data:/data/db
     ports:
       - "27017-27019:27017-27019"
   api-server:
-    image: voteapp-api-python:latest 
+    image: voteapp-api-python:latest
     env_file: .env
     ports:
-      - "5000:5000"
+      - "5000:8080"
     depends_on:
       - mongo
     links:
