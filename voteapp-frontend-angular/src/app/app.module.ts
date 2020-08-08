@@ -3,22 +3,15 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ProgrammingLanguageComponent } from './programming-language/programming-language.component';
+import { LanguageComponent } from './language/language.component';
 import { VoteComponent } from './vote/vote.component';
 
-import { CodeDetail, ProgrammingLanguage } from '../programming-language';
+import { CodeDetail, Language } from './language';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    ProgrammingLanguageComponent,
-    VoteComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  declarations: [AppComponent, LanguageComponent, VoteComponent],
+  imports: [BrowserModule, AppRoutingModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
