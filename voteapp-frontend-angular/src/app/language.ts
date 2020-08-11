@@ -9,6 +9,5 @@ export interface CodeDetail {
 
 export interface Language {
   name: string;
-  detail: string;
   codedetail: CodeDetail;
 }
