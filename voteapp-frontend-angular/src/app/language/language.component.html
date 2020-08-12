@@ -1,53 +1,19 @@
-<h3>Language Component</h3>
+<div class="container">
+    <h2>{{language.name}}</h2>
 
-<h4>Name: {{language.name | uppercase }}</h4>
+    <!-- <app-vote language="{{language.name}}"></app-vote> -->
 
-<style>
-    .cel-property {
-        text-align: right;
-        font-weight: bold;
-    }
-    .cel-value {
-        vertical-align: right;
-        font-weight: bold;
-    }
+    <p><b>Uses</b>: {{language.codedetail.usecase}}</p>
+    <p><b>Rank</b>: {{language.codedetail.rank}}</p>
+    <p><b>Homepage</b>: {{language.codedetail.homepage}}</p>
+    <div class="container">
+        <div class="row">
+        <div class="col">
+            <div class="parent">
+            <img src="assets/img/{{language.name}}.png" alt="logo" class="center-block"/>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
 
-</style>
-
-
-<table>
-    <tbody>
-        <tr>
-            <td class="cel-property">Details</td>
-            <td class="cell-value"></td>
-        </tr>
-        <tr>
-            <td class="cel-property">Use Case:</td>
-            <td>{{language.codedetail.usecase}}</td>
-        </tr>
-        <tr>
-            <td class="cel-property">Rank:</td>
-            <td>{{language.codedetail.rank}}</td>
-        </tr>
-        <tr>
-            <td class="cel-property">Compiled:</td>
-            <td>{{language.codedetail.compiled}}</td>
-        </tr>
-        <tr>
-            <td class="cel-property">Home Page</td>
-            <td>{{language.codedetail.homepage}}</td>
-        </tr> 
-        <tr>
-            <td class="cel-property">Download:</td>
-            <td>{{language.codedetail.download}}</td>
-        </tr> 
-        <tr>
-            <td class="cel-property">Votes:</td>
-            <td>{{language.codedetail.votes}}</td>
-        </tr> 
-    
-    </tbody>
-
-
-</table>
-<hr/>

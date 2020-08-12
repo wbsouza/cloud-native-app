@@ -21,7 +21,9 @@ export class LanguageComponent implements OnInit {
     private languageService: LanguageService
   ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+
+  }
 
   getLanguage(name: string): void {
     this.language = this.languageService.getLanguage(name);
