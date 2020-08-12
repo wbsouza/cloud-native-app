@@ -11,6 +11,14 @@ import { LANGUAGES } from './mock-languages';
 })
 export class LanguageService {
 
+  getLanguages(): Language[] {
+    const resp: Language[] = [];
+    // tslint:disable-next-line: forin
+    for (let key in LANGUAGES) {
+      resp.push(LANGUAGES[key]);
+    }
+    return resp;
+  }
 
   getLanguage(name: string): Language {
     return LANGUAGES[name];

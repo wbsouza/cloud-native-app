@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 import { Language } from '../language';
 import { LanguageService } from '../language.service';
+import { LANGUAGES } from '../mock-languages';
 
 
 @Component({
@@ -12,9 +12,10 @@ import { LanguageService } from '../language.service';
 export class LanguageComponent implements OnInit {
 
   @Input() set name(value: string) {
-    this.getLanguage(value);
+    this.loadLanguage(value);
   }
 
+  languages: Language[];
   language: Language;
 
   constructor(
@@ -22,10 +23,10 @@ export class LanguageComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-
+    this.languages = this.languageService.getLanguages();
   }
 
-  getLanguage(name: string): void {
+  loadLanguage(name: string): void {
     this.language = this.languageService.getLanguage(name);
   }
 

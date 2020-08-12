@@ -18,18 +18,15 @@
   </div>
 </div>
 
+
+
 <div class="container">
   <div class="row">
-    <div class="col-md-4">
-      <app-language name="go"></app-language>
-    </div>
-    <div class="col-md-4">
-      <app-language name="java"></app-language>
-    </div>
-    <div class="col-md-4">
-      <app-language name="nodejs"></app-language>
+    <div class="col-md-4" *ngFor="let language of languages">
+        <app-language name="{{language.name}}"></app-language>
     </div>
   </div>
 </div>
+
 
 
