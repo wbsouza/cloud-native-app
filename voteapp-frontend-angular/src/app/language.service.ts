@@ -4,13 +4,10 @@ import { Language } from './language';
 
 import { LANGUAGES } from './mock-languages';
 
-
-
 @Injectable({
   providedIn: 'root',
 })
 export class LanguageService {
-
   getLanguages(): Language[] {
     const resp: Language[] = [];
     // tslint:disable-next-line: forin
@@ -24,4 +21,9 @@ export class LanguageService {
     return LANGUAGES[name];
   }
 
+  addVote(languageName: string): Language {
+    var language = this.getLanguage(languageName);
+    language.codedetail.votes++;
+    return language;
+  }
 }
