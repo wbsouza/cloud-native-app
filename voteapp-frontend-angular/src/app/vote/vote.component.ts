@@ -9,14 +9,15 @@ import { LanguageService } from '../language.service';
   styleUrls: ['./vote.component.css'],
 })
 export class VoteComponent implements OnInit {
-  _languageName: string;
+
+  languageName: string;
   votes: number;
 
   @Input() set language(value: string) {
-    console.log(value);
-    this._languageName = value;
-    var language = this.languageService.getLanguage(value);
-    this.votes = language.codedetail.votes;
+    this.languageName = value;
+    this.languageService.getLanguage(value).subscribe(lang => {
+      this.votes = lang.codedetail.votes;
+    });
   }
 
   constructor(private languageService: LanguageService) {}
@@ -24,10 +25,8 @@ export class VoteComponent implements OnInit {
   ngOnInit(): void {}
 
   onVote(): void {
-    var language = this.languageService.addVote(this._languageName);
-    this.votes = language.codedetail.votes;
-    // const lang = this.languageService.addVote(this._language);
-    // this._language.codedetail.votes = lang.codedetail.votes;
-    console.log(`language: ${language.name}, votes: ${language.codedetail.votes}`);
+    this.languageService.addVote(this.languageName).subscribe(lang => {
+      this.votes = lang.codedetail.votes;
+    });
   }
 }

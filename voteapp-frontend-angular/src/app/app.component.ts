@@ -20,8 +20,8 @@ export class AppComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.languages = this.languageService.getLanguages();
+    this.languageService.getLanguages().subscribe(langs => this.languages = langs);
   }
 
-
 }
+

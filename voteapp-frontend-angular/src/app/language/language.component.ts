@@ -1,8 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Language } from '../language';
 import { LanguageService } from '../language.service';
-import { LANGUAGES } from '../mock-languages';
-// import { VoteComponent } from '../vote/vote.component';
+
+import { Observable, of } from 'rxjs';
 
 
 @Component({
@@ -16,19 +16,16 @@ export class LanguageComponent implements OnInit {
     this.loadLanguage(value);
   }
 
-  languages: Language[];
   language: Language;
 
   constructor(
     private languageService: LanguageService
   ) {}
 
-  ngOnInit(): void {
-    this.languages = this.languageService.getLanguages();
-  }
+  ngOnInit(): void {}
 
   loadLanguage(name: string): void {
-    this.language = this.languageService.getLanguage(name);
+    this.languageService.getLanguage(name).subscribe(lang => this.language = lang);
   }
 
 }
