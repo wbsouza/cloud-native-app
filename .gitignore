@@ -27,6 +27,7 @@ crashlytics-build.properties
 .idea
 
 .venv/
+mongo-data/
 logs/
 /data/
 node_modules/
