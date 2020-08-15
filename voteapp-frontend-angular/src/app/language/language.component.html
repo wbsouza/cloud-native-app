@@ -1,7 +1,7 @@
-<div class="container">
+<div *ngIf="language" class="container">
   <h2>{{ language.name }}</h2>
 
-  <app-vote language="{{ language.name }}"></app-vote>
+  <app-vote [language]="language"></app-vote>
   <br />
   <p><b>Uses</b>: {{ language.codedetail.usecase }}</p>
   <p><b>Rank</b>: {{ language.codedetail.rank }}</p>
